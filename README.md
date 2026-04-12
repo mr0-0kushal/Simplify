@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Simplify
-=======
 # Simplify
 
 Simplify is an offline-first Flutter task manager designed to keep personal planning fast, calm, and fully local. It helps users manage standard one-time tasks as well as recurring focus sessions called **Yudh**, with on-device reminders, optional follow-up alarms, progress tracking, and downloadable reports.
@@ -103,4 +100,3 @@ Simplify was built to offer a cleaner and more focused alternative to cloud-heav
 ## Repository
 
 GitHub: https://github.com/mr0-0kushal/Simplify
->>>>>>> aa7463b (first commit - main)
