@@ -20,6 +20,10 @@ abstract final class AppConstants {
       'lib/assets/images/Simplify_light_theme_app_icon.png';
   static const String darkAppIconAsset =
       'lib/assets/images/Simplify_dark_theme_app_icon.png';
+  static const String privacyPolicyUrl =
+      'https://sites.google.com/view/simplify-privacy-policy/home';
+  static const String privacyPolicyEffectiveDate = '14th March 2026';
+  static const String privacyPolicyEmail = 'kushalsharmahacker678@gmail.com';
 
   static const String notificationChannelName = 'Task Reminders';
   static const String notificationChannelDescription =

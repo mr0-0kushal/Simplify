@@ -9,6 +9,7 @@ import '../providers/notification_preferences_provider.dart';
 import '../providers/task_provider.dart';
 import '../providers/theme_provider.dart';
 import 'contact_screen.dart';
+import 'privacy_policy_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -117,6 +118,12 @@ class SettingsScreen extends StatelessWidget {
     ).push(MaterialPageRoute<void>(builder: (_) => const ContactScreen()));
   }
 
+  Future<void> _openPrivacyPolicy(BuildContext context) {
+    return Navigator.of(context).push(
+      MaterialPageRoute<void>(builder: (_) => const PrivacyPolicyScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer3<
@@ -179,6 +186,49 @@ class SettingsScreen extends StatelessWidget {
                                   value ? ThemeMode.dark : ThemeMode.light,
                                 );
                               },
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 18),
+                      _SettingsCard(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Privacy',
+                              style: theme.textTheme.headlineSmall,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Review how Simplify keeps your tasks, reminders, and preferences on your device, and open the hosted policy link when you need it.',
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: theme.colorScheme.onSurfaceVariant,
+                              ),
+                            ),
+                            const SizedBox(height: 18),
+                            ListTile(
+                              contentPadding: EdgeInsets.zero,
+                              leading: Container(
+                                width: 46,
+                                height: 46,
+                                decoration: BoxDecoration(
+                                  color: theme.colorScheme.primary.withValues(
+                                    alpha: 0.12,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Icon(
+                                  Icons.verified_user_rounded,
+                                  color: theme.colorScheme.primary,
+                                ),
+                              ),
+                              title: const Text('Privacy policy'),
+                              subtitle: Text(
+                                'Effective date: ${AppConstants.privacyPolicyEffectiveDate}',
+                              ),
+                              trailing: const Icon(Icons.chevron_right_rounded),
+                              onTap: () => _openPrivacyPolicy(context),
                             ),
                           ],
                         ),
